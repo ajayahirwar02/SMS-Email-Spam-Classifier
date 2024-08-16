@@ -5,6 +5,12 @@ from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
 
+#set page configuration
+st.set_page_config(
+    page_title="SMS/Email Spam Classifier" 
+)
+
+
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -55,3 +61,30 @@ if st.button('Predict'):
         st.header("Spam")
     else:
         st.header("Not Spam")
+
+#design footer
+st.markdown(
+    """
+    <style>
+    .footer { 
+        #link{
+        text-decoration: none;
+        }
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;d
+        box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+    <div class="footer">
+        <p> <a id ="link" href = "https://www.linkedin.com/in/ajayahirwar02/">Developed by Ajay Ahirwar</a></p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
